@@ -1,11 +1,10 @@
 name: audit
 # GoReleaser writes this tap's casks; their formatting can't satisfy homebrew-core's `brew
-# style` layout cops (multi-line verified url + hook block), which is irrelevant for a
-# personal tap. We run the meaningful check — `brew audit` — instead.
+# style` layout cops, which is irrelevant for a personal tap. We run the meaningful check —
+# `brew audit` — against the published cask instead.
 on:
   push:
     branches: [main]
-  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
@@ -13,11 +12,12 @@ jobs:
   audit:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v4
       - uses: Homebrew/actions/setup-homebrew@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Audit cask
+        env:
+          HOMEBREW_NO_INSTALL_FROM_API: "1"
         run: |
-          brew tap rnwolfe/homebrew-tap "$GITHUB_WORKSPACE"
+          brew tap rnwolfe/homebrew-tap
           brew audit --cask --except=installed rnwolfe/homebrew-tap/rivr
