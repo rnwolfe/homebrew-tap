@@ -3,8 +3,8 @@ class Gfly < Formula
 
   desc "Google Flights for agents - a read-only, JSON-first flight-search CLI"
   homepage "https://gfly.sh"
-  url "https://files.pythonhosted.org/packages/ac/54/df1de39c0fa04cb813344ac8423b820e0b4cbb9081ac9573aad1c82f04e6/gfly-0.1.0.tar.gz"
-  sha256 "63bb242e047e367e552e21841275ffae2c537e707807f33fcf9851a9c87d53aa"
+  url "https://files.pythonhosted.org/packages/4d/0e/462a954d5d3929b33e9624efa34f7e6653ecf7c0eb7778dd305d40e90b09/gfly-0.2.0.tar.gz"
+  sha256 "dd60d815ec6a833556e07fe71f52a149cb752fcf3afbb5b2d23f8b1ea6cf2c5e"
   license any_of: ["MIT", "Apache-2.0"]
 
   depends_on "python@3.13"
@@ -131,7 +131,7 @@ class Gfly < Formula
   end
 
   test do
-    assert_match "0.1.0", shell_output("#{bin}/gfly --version")
+    assert_match version.to_s, shell_output("#{bin}/gfly --version")
     # offline checks - no network needed (airportsdata is bundled; schema is in-binary)
     assert_match "schemaVersion", shell_output("#{bin}/gfly airports search tokyo --json")
     assert_match "\"blocked\": 20", shell_output("#{bin}/gfly schema")
