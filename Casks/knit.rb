@@ -4,22 +4,22 @@ cask "knit" do
 
   on_macos do
     on_intel do
-      sha256 "5c8c4d5baf8ccc19f7f429b7281f20e294d4b7a1a80cc4f2da4e75fdbdf1e0db"
+      sha256 "b5904f75c832bb85a6dd1d3ad13adf140b51974f49debbac8e242fe669fcc89e"
       url "https://github.com/rnwolfe/knit/releases/download/v#{version}/knit_darwin_amd64.tar.gz"
     end
     on_arm do
-      sha256 "7152eeee03e76e63d60a7df1504f264c70b144d09f190b796b309fd788ca961f"
+      sha256 "12ba12283ab0f8adf91c668ac051bac117a2e1ce24ceb20a1f00c38adc1541e2"
       url "https://github.com/rnwolfe/knit/releases/download/v#{version}/knit_darwin_arm64.tar.gz"
     end
   end
 
   on_linux do
     on_intel do
-      sha256 "966287032797d02621f4056265df7ce292e728983cc4630c28fcd98eda3e84fb"
+      sha256 "6bc24d7f4ece62a15cd0a283384614928f60228001cccc5a2114eddb3ad783d6"
       url "https://github.com/rnwolfe/knit/releases/download/v#{version}/knit_linux_amd64.tar.gz"
     end
     on_arm do
-      sha256 "48e05b0f6a95f1d93adb19a96f7adb9d6379fb5714d9acdf9d402f1f9338b92c"
+      sha256 "c241a7ae494e97766fb623d7a501a2dd5791b97d5e512ca3066330f47db47552"
       url "https://github.com/rnwolfe/knit/releases/download/v#{version}/knit_linux_arm64.tar.gz"
     end
   end
