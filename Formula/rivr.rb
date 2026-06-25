@@ -5,21 +5,21 @@
 class Rivr < Formula
   desc "Read-only Amazon Shopping CLI for AI agents"
   homepage "https://rivr.sh/"
-  version "0.3.1"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/rnwolfe/rivr/releases/download/v0.3.1/rivr_0.3.1_darwin_amd64.tar.gz"
-      sha256 "fa519dc284f8ff76e45ede4d9250b06ce6baac68f2092a07f1fe233c5cac3220"
+      url "https://github.com/rnwolfe/rivr/releases/download/v0.4.0/rivr_0.4.0_darwin_amd64.tar.gz"
+      sha256 "78f8775a89dc6e1c6b4633893d1a1a1e94d0ec142a18046e80147ccc9dcdac32"
 
       define_method(:install) do
         bin.install "rivr"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/rnwolfe/rivr/releases/download/v0.3.1/rivr_0.3.1_darwin_arm64.tar.gz"
-      sha256 "7c4e58d2b29ded375ca5fc91814d1b67e25d92c7966f4cafbeac976f41774d9e"
+      url "https://github.com/rnwolfe/rivr/releases/download/v0.4.0/rivr_0.4.0_darwin_arm64.tar.gz"
+      sha256 "f0a4988f5f8ca4639e340279102e4b1d815e5e9e9bd481a4c28c0aca30e7df0f"
 
       define_method(:install) do
         bin.install "rivr"
@@ -29,15 +29,15 @@ class Rivr < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rnwolfe/rivr/releases/download/v0.3.1/rivr_0.3.1_linux_amd64.tar.gz"
-      sha256 "72900b0dfe812823e30ff61df7795f9aedb381988c55c44fd2c20d2c121e0ae1"
+      url "https://github.com/rnwolfe/rivr/releases/download/v0.4.0/rivr_0.4.0_linux_amd64.tar.gz"
+      sha256 "4c68223b089afe74e308eaf252a2cd73acc34ec7bd9a5ebb2d391210cfe578d7"
       define_method(:install) do
         bin.install "rivr"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/rnwolfe/rivr/releases/download/v0.3.1/rivr_0.3.1_linux_arm64.tar.gz"
-      sha256 "ea422f56fed47205d55cec977681c08cd80dbb60e53ba64385c4327aab2cfa19"
+      url "https://github.com/rnwolfe/rivr/releases/download/v0.4.0/rivr_0.4.0_linux_arm64.tar.gz"
+      sha256 "aedfd8460d1d318716286ada2afd542d15f760210ad503e7d2a4dd928ea94222"
       define_method(:install) do
         bin.install "rivr"
       end
