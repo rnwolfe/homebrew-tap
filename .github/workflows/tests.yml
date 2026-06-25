@@ -1,7 +1,5 @@
 name: audit
-# GoReleaser writes this tap's casks; their formatting can't satisfy homebrew-core's `brew
-# style` layout cops, which is irrelevant for a personal tap. We run the meaningful check —
-# `brew audit` — against the published cask instead.
+# GoReleaser writes rivr's formula here; run the meaningful check (brew audit) on push.
 on:
   push:
     branches: [main]
@@ -15,9 +13,9 @@ jobs:
       - uses: Homebrew/actions/setup-homebrew@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Audit cask
+      - name: Audit rivr formula
         env:
           HOMEBREW_NO_INSTALL_FROM_API: "1"
         run: |
           brew tap rnwolfe/homebrew-tap
-          brew audit --cask --except=installed rnwolfe/homebrew-tap/rivr
+          brew audit --formula --except=installed rnwolfe/homebrew-tap/rivr
